@@ -1,9 +1,6 @@
-[submodule "ga_dpp1"]
-	path = ga_dpp1
-	url = git@bitbucket.org:general-aeronautics/ga_dpp1.git
-[submodule "src/util/observable_data_object"]
-	path = src/util/observable_data_object
-	url = https://github.com/souku2023/observable_data_object.git
 [submodule "src/util/logger"]
 	path = src/util/logger
 	url = https://github.com/souku2023/python_logger.git
+[submodule "src/util/observable_data_object"]
+	path = src/util/observable_data_object
+	url = https://github.com/souku2023/observable_data_object.git
