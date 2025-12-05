@@ -1,0 +1,11 @@
+[project]
+name = "cygnus"
+version = "0.1.0"
+description = "A Test Suite for the ga_dpp algorithm"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "nuitka>=2.8.9",
+    "pyqtgraph>=0.14.0",
+    "pyside6>=6.10.1",
+]
