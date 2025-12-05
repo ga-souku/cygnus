@@ -224,6 +224,19 @@ class Canvas2DQWidget(QWidget):
                 self._plot_items[polygon.id] = scatter
 
     @property
+    def view_model(self) -> Canvas2DQViewModel:
+        """Get the view model."""
+        return self._view_model
+
+    @property
     def plot_widget(self) -> pg.PlotWidget:
         """Get the underlying PyQtGraph plot widget."""
         return self._plot_widget
+
+    def get_plot_data(self) -> Canvas2DPlotData:
+        """
+        Get the current plot data container.
+
+        :return: Canvas2DPlotData instance
+        """
+        return self._view_model.plot_data

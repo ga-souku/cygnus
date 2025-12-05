@@ -1,5 +1,7 @@
 """ViewModel for 2D canvas widget."""
 
+from __future__ import annotations
+
 import uuid
 
 from PySide6.QtCore import QObject, Signal
@@ -159,3 +161,27 @@ class Canvas2DQViewModel(QObject):
         """Clear the current plot (for polyline/polygon, allows starting a new one)."""
         log.d("Clearing current plot")
         self._current_plot_id = None
+
+    def set_plot_data(self, new_plot_data: Canvas2DPlotData):
+        """
+        Replace the entire plot_data instance with a new one.
+        
+        The caller is responsible for ensuring that the update attribute is set
+        correctly on each plot in the new_plot_data instance.
+
+        :param new_plot_data: New Canvas2DPlotData instance to replace the current one
+        """
+        log.d("Replacing plot_data instance")
+        
+        # Disconnect old signal
+        self._plot_data.data_changed.disconnect(self._on_data_changed)
+        
+        # Replace the instance
+        self._plot_data = new_plot_data
+        
+        # Reconnect signal
+        self._plot_data.data_changed.connect(self._on_data_changed)
+        
+        # Emit update signal
+        self.update_requested.emit()
+        log.d("Plot data replacement complete")

@@ -2,11 +2,10 @@
 
 import sys
 
-from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QComboBox, QHBoxLayout, QLabel, QMainWindow, QVBoxLayout, QWidget
 
-from src.core.canvas_2d import Canvas2DQWidget, Canvas2DQViewModel, Canvas2DInteractionHandler
-from src.core.canvas_2d.plot_data.plot_data_2d_enum import PlotData2D
+from src.core.widgets.canvas_2d import Canvas2DQWidget, Canvas2DQViewModel, Canvas2DInteractionHandler
+from src.core.widgets.canvas_2d.plot_data.plot_data_2d_enum import PlotData2D
 from src.util.logger import Logger
 
 log = Logger(__name__)

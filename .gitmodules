@@ -4,3 +4,6 @@
 [submodule "src/util/observable_data_object"]
 	path = src/util/observable_data_object
 	url = https://github.com/souku2023/observable_data_object.git
+[submodule "ga_dpp1"]
+	path = ga_dpp1
+	url = git@bitbucket.org:general-aeronautics/ga_dpp1.git
